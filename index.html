@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Sudoku Mini</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    body {
+      background: #110e1b;
+      color: #f3effe;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    #game-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #1b162b;
+      padding: 18px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 20px rgba(138, 99, 210, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    canvas {
+      border-radius: 12px;
+      background: #ffffff;
+      touch-action: none;
+    }
+    .control-panel {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+    .btn {
+      flex: 1;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #7c4dff;
+      color: white;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:hover {
+      background: #956dff;
+    }
+    .btn:active {
+      transform: scale(0.97);
+    }
+    .btn-secondary {
+      background: #332b47;
+      color: #cbb8f7;
+    }
+    .btn-secondary:hover {
+      background: #443a5e;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="game-container">
+    <canvas id="gameCanvas" width="480" height="640"></canvas>
+    <div class="control-panel">
+      <button class="btn btn-secondary" onclick="resetLevel()">Restart Level</button>
+      <button class="btn" id="musicBtn" onclick="toggleMusic()">🎵 Musik: Off</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
